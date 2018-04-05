@@ -1,0 +1,108 @@
+
+public class Ben_Walker_HW2_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+	
+	public void asciify(String currentTime){
+		
+		String[][] asciiOutput = new String[19][7];
+		
+		for(int i = 0; i < currentTime.length();i++){
+			
+			if(currentTime.charAt(i) == '1'){
+				
+				"    ,   |,   |,    ,   |,   |,    ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '2'){
+				
+				" -- ,   |,   |, -- , |  , |  , -- ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '3'){
+				
+				" -- ,   |,   |, -- ,   |,   |, -- ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '4'){
+				
+				"    ,|  |,|  |, -- ,   |,   |,    ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '5'){
+				
+				" -- ,|   ,|   , -- ,   |,   |, -- ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '6'){
+				
+				" -- ,|   ,|   , -- ,|  |,|  |, -- ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '7'){
+				
+				" -- ,   |,   |,    ,   |,   |,    ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '8'){
+				
+				" -- ,|  |,|  |, -- ,|  |,|  |, -- ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '9'){
+				
+				" -- ,|  |,|  |, -- ,   |,   |,    ";
+				
+			}
+			
+			if(currentTime.charAt(i) == '0'){
+				
+				" -- ,|  |,|  |,    ,|  |,|  |, -- ";
+			}
+			
+			if(currentTime.charAt(i) == ':'){
+				//for for gives multidimensionality
+				//needs to use the "," to move down a row
+				"   ,   , - ,| |, - , - ,| |, - ";
+				
+			}
+		}
+		
+	}
+	
+	public void addToArray(String ary[][], String toBeEntered, int numOfChar){
+		
+		int rowIndex = 0;
+		int columnIndex = 0;
+		
+		for(int i = 0; i < toBeEntered.length();i++){
+			
+			if(toBeEntered.charAt(i) == ','){
+				
+				rowIndex = 0+(3*numOfChar);
+				columnIndex += 1;
+				
+			}
+			else{
+				
+				ary[rowIndex][columnIndex] = (toBeEntered.charAt(i) + "");
+				
+			}
+			
+		}
+		
+	}
+
+}

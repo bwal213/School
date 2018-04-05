@@ -1,0 +1,174 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author Ben
+ *
+ */
+public class Ben_Walker_HW1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/**
+		* TODO
+		* -add the ability to return TRUE when correct
+		* -change to getting per char not per int
+		* -comment this thang!
+		* (optional)
+		* -Beautify
+		* -Try except?
+		* -GUI
+		*
+		*/ 
+		
+		try{
+			
+			playSudoku();
+			
+		}catch(Exception e){
+			
+			System.out.print("Sorry, something went wrong.\n"
+					+ e);
+			
+		}
+
+	}
+	
+	public static boolean playSudoku(){
+		
+		int[][] puzzleBlock = new int[9][9]; 
+		
+		puzzleBlock = fillArray(puzzleBlock);
+		outputArray(puzzleBlock);
+		if(checkArray(puzzleBlock) == "TRUE"){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+	
+	public static int[][] fillArray(int[][] ary){
+		
+		for(int i = 0; i < ary.length; i++){
+			for(int j = 0; j < ary[i].length; j++){
+				ary[i][j] = getInputKeyboard();
+			}
+		}
+		
+		return ary;
+	}
+	
+	public static int getInputRand(){
+		
+		int num;
+		
+		num = (int) (Math.random() * 9);
+		while (num < 1){
+			num = (int) (Math.random() * 9);
+		}
+		
+		return num;
+		
+	}
+	
+	public static int getInputKeyboard(){
+		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("enter an integer");
+		return (keyboard.nextInt());
+		
+	}
+	
+	public static void outputArray(int[][] ary){
+		
+		for(int i = 0; i < ary.length; i++){
+			for(int j = 0; j < ary[i].length; j++){
+				System.out.print(" [ " + ary[i][j] + " ] ");
+			}
+			System.out.print("\n");
+		}
+		
+	}
+	
+	public static String checkArray(int[][] ary){
+		
+		/**
+		 * I do feel bad about this, but I couldn't
+		 * come up with a better way to check through
+		 * the whole set per Sudoku rules.
+		 *
+		 * This method takes in a two dinmesional array
+		 * and then checks both the vertical and 
+		 * horizontal columns for any duplicates.
+		 * This is achieved by checking each row first
+		 * and compiling a list of numbers given on the
+		 * fly, and checking if the same number was
+		 * already added. It then checks the columns
+		 * the same way. If it works, it returns "TRUE"
+		 * else it will return "FALSE".
+		 * 
+		 *  There are efficiencies that could be gained
+		 *  by kicking out and stopping as soon as
+		 *  incorrect input is detected, granted that
+		 *  is more how an actual game would work.
+		 */
+		
+		int works = 1;
+		
+		for(int i = 0; i < ary.length; i++){
+			
+			int cnt = 0;
+			int[] tmp = new int[ary.length];
+			for(int j = 0; j < ary[i].length; j++){
+				for(int k = 0; k < cnt; k++){
+					
+					//System.out.print("inside k for loop.\n");
+					if(tmp[k] == ary[i][j]){
+						System.out.print("There is a duplicate in row" + i 
+								+ ",\n (" + ary[i][j] + ") this will not work!\n");
+						works = 0;
+					}
+				}
+				tmp[cnt] = ary[i][j];
+				cnt++;
+				//System.out.print("Added a thing to tmp.\n");
+			}
+			
+		}
+		
+		for(int j = 0; j < ary.length; j++){
+			
+			int cnt = 0;
+			int[] tmp = new int[ary.length];
+			for(int i = 0; i < ary[j].length; i++){
+				for(int k = 0; k < cnt; k++){
+					
+					//System.out.print("inside k for loop.\n");
+					if(tmp[k] == ary[i][j]){
+						System.out.print("There is a duplicate in column" + j 
+								+",\n (" + ary[i][j] + ") this will not work!\n");
+						works = 0;
+					}
+				}
+				tmp[cnt] = ary[i][j];
+				cnt++;
+				//System.out.print("Added a thing to tmp.\n");
+			}
+			
+		}
+		
+		if(works == 1){
+			return "TRUE";
+		}else{
+			return "FALSE";
+		}
+		
+	}
+
+}

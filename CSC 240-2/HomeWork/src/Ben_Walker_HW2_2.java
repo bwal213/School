@@ -1,0 +1,194 @@
+import java.util.Date;
+
+/**
+ * @author Ben Walker
+ * @version 1.0
+ *
+ */
+
+public class Ben_Walker_HW2_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Date currenttime = new Date();
+		
+		String str = String.format("%tc", currenttime);
+		
+		String currentTime = extractTime(str);
+		System.out.print(str + "\n");
+		
+		asciify(currentTime);
+
+	}
+	
+	/**
+	 * Takes in the time from date, extracts the hour and minute.
+	 * 
+	 * Converts the full date, to only what is needed to process
+	 * the ascii form.
+	 * 
+	 * @param String The full time to extract from.
+	 * @return String Only the numerical time that is needed.
+	 */
+	
+	public static String extractTime(String str){
+		
+		int cnt = 0;
+		String currentTime = "";
+		//System.out.print("Entered extractTime\n");
+		for(int i = 0; i < str.length();i++){
+			//System.out.print(cnt + "\n");
+			if(str.charAt(i) == ' ' && cnt < 3){
+				
+				cnt++;
+				currentTime = "";
+			}
+			
+			if(cnt == 3 && (currentTime.length() < 5)){
+				//i++;
+				currentTime = currentTime + (str.charAt(i+1)+ "");
+				
+			}
+			
+		}
+		//System.out.print(currentTime + "\n");
+		return currentTime;
+	}
+	
+	/**
+	 * Takes in the time, build an array based on the characters
+	 * 
+	 * By using predefined strings for the ascii art form of the 
+	 * numbers and characters, it cycles through the input string
+	 * and adds each number(or :) when found, and then calls
+	 * addToArray() to put it in the array for later display.
+	 * 
+	 * @param currentTime the time to be converted
+	 */
+	
+	public static void asciify(String currentTime){
+		
+		String[][] asciiOutput = new String[25][7];
+		
+		for(int i = 0; i < currentTime.length();i++){
+			
+			if(currentTime.charAt(i) == '1'){
+				
+				addToArray(asciiOutput, "     ,    |,    |,     ,    |,    |,     ", i);	
+			}
+			
+			if(currentTime.charAt(i) == '2'){
+				
+				addToArray(asciiOutput, "  -- ,    |,    |,  -- , |   , |   ,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == '3'){
+				
+				addToArray(asciiOutput, "  -- ,    |,    |,  -- ,    |,    |,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == '4'){
+				
+				addToArray(asciiOutput, "     , |  |, |  |,  -- ,    |,    |,     ", i);	
+			}
+			
+			if(currentTime.charAt(i) == '5'){
+				
+				addToArray(asciiOutput, "  -- , |   , |   ,  -- ,    |,    |,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == '6'){
+				
+				addToArray(asciiOutput, "  -- , |   , |   ,  -- , |  |, |  |,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == '7'){
+				
+				addToArray(asciiOutput, "  -- ,    |,    |,     ,    |,    |,     ", i);
+			}
+			
+			if(currentTime.charAt(i) == '8'){
+				
+				addToArray(asciiOutput, "  -- , |  |, |  |,  -- , |  |, |  |,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == '9'){
+				
+				addToArray(asciiOutput, "  -- , |  |, |  |,  -- ,    |,    |,     ", i);
+			}
+			
+			if(currentTime.charAt(i) == '0'){
+				
+				addToArray(asciiOutput, "  -- , |  |, |  |,     , |  |, |  |,  -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == ':'){
+				//for for gives multidimensionality
+				//needs to use the "," to move down a row
+				addToArray(asciiOutput, "     ,  -  , | | ,  -  ,  -  , | | ,  -  ", i);
+			}
+		}
+		
+		displayArray(asciiOutput);
+		
+	}
+	
+	/**
+	 * Takes in a String[][] and displays its contents.
+	 * 
+	 * @param asciiOutput 25 by 7 array to be displayed
+	 */
+	
+	public static void displayArray(String asciiOutput[][]){
+		
+		String printString = "";
+		
+		for(int j = 0; j < (asciiOutput[0]).length; j++){
+			for(int k = 0;k < asciiOutput.length; k++ ){
+				
+				printString += asciiOutput[k][j];
+				
+			}
+			printString += "\n";	
+		}
+		
+		System.out.print(printString);
+		
+	}
+	
+	/**
+	 * Puts a 35 character string into its position in the array.
+	 * 
+	 * Takes in the array and the string to be added, as well as the
+	 * pointer number to allow it to know what segment of the array
+	 * is being worked with. This will use ',' as the delimiter, and
+	 * move to the next row when found. This takes the string
+	 * string formatting before to convert it into the correct
+	 * position in the  array for it to look correct at the end.
+	 * 
+	 * @param ary String array to be added to
+	 * @param toBeEntered The String to be put int ary[][]
+	 * @param numOfChar int for what character is being worked with
+	 */
+	
+	public static void addToArray(String ary[][], String toBeEntered, int numOfChar){
+		
+		int rowIndex = ((numOfChar*4) + numOfChar);
+		int columnIndex = 0;
+		
+		for(int i = 0; i < toBeEntered.length();i++){
+			
+			if(toBeEntered.charAt(i) == ','){
+				
+				rowIndex = ((numOfChar*4) + numOfChar);
+				columnIndex = columnIndex + 1;
+			}
+			else{
+				
+				ary[rowIndex][columnIndex] = (toBeEntered.charAt(i) + "");
+				rowIndex++;
+			}			
+		}		
+	}
+}

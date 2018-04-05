@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author Ben
+ *
+ */
+public class Ben_Walker_HW1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[][] puzzleBlock = new int[9][9]; 
+		
+		puzzleBlock = fillArray(puzzleBlock);
+		
+		outputArray(puzzleBlock);
+		checkArray(puzzleBlock);
+		
+		System.out.print("Done!");
+
+	}
+	
+	public static int[][] fillArray(int[][] ary){
+		
+		for(int i = 0; i < ary.length; i++){
+			for(int j = 0; j < ary[i].length; j++){
+				ary[i][j] = getInputKeyboard();
+			}
+		}
+		
+		return ary;
+	}
+	
+	public static int getInputRand(){
+		
+		int num;
+		
+		num = (int) (Math.random() * 9);
+		while (num < 1){
+			num = (int) (Math.random() * 9);
+		}
+		
+		return num;
+		
+	}
+	
+	public static int getInputKeyboard(){
+		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("enter an integer");
+		return (keyboard.nextInt());
+		
+	}
+	
+	public static void outputArray(int[][] ary){
+		
+		for(int i = 0; i < ary.length; i++){
+			for(int j = 0; j < ary[i].length; j++){
+				System.out.print(" [ " + ary[i][j] + " ] ");
+			}
+			System.out.print("\n");
+		}
+		
+	}
+	
+	public static void checkArray(int[][] ary){
+		
+		for(int i = 0; i < ary.length; i++){
+			
+			int cnt = 0;
+			int[] tmp = new int[ary.length];
+			for(int j = 0; j < ary[i].length; j++){
+				for(int k = 0; k < cnt; k++){
+					
+					//System.out.print("inside k for loop.\n");
+					if(tmp[k] == ary[i][j]){
+						System.out.print("There is a duplicate in row" + i 
+								+ ",\n (" + ary[i][j] + ") this will not work!\n");
+					}
+				}
+				tmp[cnt] = ary[i][j];
+				cnt++;
+				//System.out.print("Added a thing to tmp.\n");
+			}
+			
+		}
+		
+		for(int j = 0; j < ary.length; j++){
+			
+			int cnt = 0;
+			int[] tmp = new int[ary.length];
+			for(int i = 0; i < ary[j].length; i++){
+				for(int k = 0; k < cnt; k++){
+					
+					//System.out.print("inside k for loop.\n");
+					if(tmp[k] == ary[i][j]){
+						System.out.print("There is a duplicate in column" + j 
+								+",\n (" + ary[i][j] + ") this will not work!\n");
+					}
+				}
+				tmp[cnt] = ary[i][j];
+				cnt++;
+				//System.out.print("Added a thing to tmp.\n");
+			}
+			
+		}
+		
+	}
+
+}

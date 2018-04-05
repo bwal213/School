@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+
+/**
+ * @author Ben
+ *
+ */
+public class Ben_Walker_HW1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public int getInput(){
+		
+		int num;
+		
+		num = (Math.random() * 9);
+		while (num < 1){
+			num = (Math.random() * 9);
+		}
+		
+		return num
+		
+	}
+
+}

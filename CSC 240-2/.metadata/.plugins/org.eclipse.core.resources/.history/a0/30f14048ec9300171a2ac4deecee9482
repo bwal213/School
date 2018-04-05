@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+
+/**
+ * @author Ben
+ *
+ */
+public class Ben_Walker_HW1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[][] puzzleBlock = new int[9][9];
+		
+		//for 
+		
+		fillArray(puzzleBlock);
+
+	}
+	
+	public static int[][] fillArray(int[][] ary){
+		
+		int i = ary[0].length;
+		System.out.print(i);
+		
+		return ary;
+	}
+	
+	public static int getInput(){
+		
+		int num;
+		
+		num = (int) (Math.random() * 9);
+		while (num < 1){
+			num = (int) (Math.random() * 9);
+		}
+		
+		return num;
+		
+	}
+
+}

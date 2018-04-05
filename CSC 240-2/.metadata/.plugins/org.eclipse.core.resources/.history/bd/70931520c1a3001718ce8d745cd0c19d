@@ -1,0 +1,151 @@
+import java.util.Date;
+
+public class Ben_Walker_HW2_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Date currenttime = new Date();
+		
+		String str = String.format("%tc", currenttime);
+		
+		String currentTime = extractTime(str);
+		
+		asciify(currentTime);
+
+	}
+	
+	public static String extractTime(String str){
+		
+		int cnt = 0;
+		String currentTime = "";
+		System.out.print("Entered extractTime\n");
+		for(int i = 0; i < str.length();i++){
+			System.out.print(cnt + "\n");
+			if(str.charAt(i) == ' ' && cnt < 3){
+				
+				cnt++;
+				currentTime = "";
+			}
+			
+			if(cnt == 3 && (currentTime.length() < 5)){
+				//i++;
+				currentTime = currentTime + (str.charAt(i+1)+ "");
+				
+			}
+			
+		}
+		System.out.print(currentTime + "\n");
+		return currentTime;
+	}
+	
+	public static void asciify(String currentTime){
+		
+		String[][] asciiOutput = new String[21][7];
+		String printString = "";
+		
+		for(int i = 0; i < currentTime.length();i++){
+			
+			if(currentTime.charAt(i) == '1'){
+				
+				addToArray(asciiOutput, "    ,   |,   |,    ,   |,   |,    ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '2'){
+				
+				addToArray(asciiOutput, " -- ,   |,   |, -- , |  , |  , -- ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '3'){
+				
+				addToArray(asciiOutput, " -- ,   |,   |, -- ,   |,   |, -- ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '4'){
+				
+				addToArray(asciiOutput, "    ,|  |,|  |, -- ,   |,   |,    ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '5'){
+				
+				addToArray(asciiOutput, " -- ,|   ,|   , -- ,   |,   |, -- ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '6'){
+				
+				addToArray(asciiOutput, " -- ,|   ,|   , -- ,|  |,|  |, -- ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '7'){
+				
+				addToArray(asciiOutput, " -- ,   |,   |,    ,   |,   |,    ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '8'){
+				
+				addToArray(asciiOutput, " -- ,|  |,|  |, -- ,|  |,|  |, -- ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '9'){
+				
+				addToArray(asciiOutput, " -- ,|  |,|  |, -- ,   |,   |,    ", i);
+				
+			}
+			
+			if(currentTime.charAt(i) == '0'){
+				
+				addToArray(asciiOutput, " -- ,|  |,|  |,    ,|  |,|  |, -- ", i);
+			}
+			
+			if(currentTime.charAt(i) == ':'){
+				//for for gives multidimensionality
+				//needs to use the "," to move down a row
+				addToArray(asciiOutput, "   ,   , - ,| |, - , - ,| |, - ", i);
+				
+			}
+		}
+		
+		for(int j = 0; j < (asciiOutput[0]).length; j++){
+			for(int k = 0;k < asciiOutput.length; k++ ){
+				
+				printString += asciiOutput[k][j];
+				
+			}
+			printString += "\n";	
+		}
+		
+		System.out.print(printString);
+	}
+	
+	public static void addToArray(String ary[][], String toBeEntered, int numOfChar){
+		
+		int rowIndex = 0;
+		int columnIndex = 0;
+		
+		for(int i = 0; i < toBeEntered.length();i++){
+			
+			if(toBeEntered.charAt(i) == ','){
+				
+				rowIndex = 0+(3*numOfChar);
+				columnIndex += 1;
+				System.out.print("added a thing");
+			}
+			else{
+				
+				ary[rowIndex][columnIndex] = (toBeEntered.charAt(i) + "");
+				
+			}
+			
+		}
+		
+	}
+
+}
