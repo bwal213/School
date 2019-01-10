@@ -1,0 +1,66 @@
+;;;=================================================================
+;;;Ben Walker
+;;;10-3-18
+;;;CSC345: Homework 1
+;;;=================================================================
+
+;;;=================================================================
+;;;    NAME: sum
+;;;  ARG(S): two integers
+;;; RETURNS: Returns the sum of the two integers
+
+(defun sum (N M)
+  "Returns the sum of two integers."
+  (labels
+    ((sum-add (n m)
+       (cond ((equal m 0) n)
+	 (t (sum-add (1+ n) (1- m)))
+	 ))
+    (sum-sub (n m)
+       (cond ((equal m 0) n)
+	 (t (sum-sub (1- n) (1+ m)))
+	 )))
+  (cond ((or (not (integerp N)) (not (integerp M))) nil)
+	((> M 0) (sum-add N M))
+	((< M 0) (sum-sub N M))
+	(t nil))))
+
+;;;=================================================================
+;;;    NAME: my-replace
+;;;  ARG(S): two elements then a list
+;;; RETURNS: Returns the the list with replacements done
+
+(defun my-replace (e1 e2 L)
+  "Will replace the first element \"e1\", with the second element \"e2\", in the list \"L\", and return that list."		       
+  (cond ((endp L) nil)
+	((equal (first L) e1) (append (list e2) (my-replace e1 e2 (rest L))))
+	((listp (first L)) (append (list(my-replace e1 e2 (first L)))
+				   (my-replace e1 e2 (rest L))))
+	(t(append (list(first L)) (my-replace e1 e2 (rest L))))))
+
+;;;=================================================================
+;;;    NAME: fibonacci
+;;;  ARG(S): any integer
+;;; RETURNS: Returns the n'th number of the fibonacci sequence
+
+(defun fibonacci (n)
+  "a double recursive fibonacci function"
+  (cond ((equal n 0) 0)
+	((equal n 1) 1)
+	(t(+ (fibonacci(- n 1)) (fibonacci (- n 2)))))
+  )
+
+;;;=================================================================
+;;;    NAME: fibonacci-TR
+;;;  ARG(S): any integer
+;;; RETURNS: Returns the n'th number of the fibonacci sequence
+
+(defun fibonacci-TR (n)
+  "Returns an integer equal to the n'th number of the fibonacci sequence"
+  (labels ((fib-tr (n k1 k2)
+	     (cond ((equal n 0) k1)
+		   (t(fib-tr (- n 1) k2 (+ k1 k2))))))
+	   (fib-tr n 0 1)))
+
+;;;=================================================================
+;;; END

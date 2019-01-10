@@ -1,0 +1,4 @@
+remdev@UbuRemDev:~/School/CSC345/HW0$ g++ HW0.cpp
+remdev@UbuRemDev:~/School/CSC345/HW0$ ./a.out
+45
+remdev@UbuRemDev:~/School/CSC345/HW0$ 

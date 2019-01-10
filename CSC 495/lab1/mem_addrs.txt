@@ -1,0 +1,8 @@
+return in return_input
+0x004005ad
+after return thing in main
+0x004005ce
+stack addr of above value
+0xbffff11c
+addr of secret function
+0x0040054d

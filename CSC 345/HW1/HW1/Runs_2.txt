@@ -1,0 +1,27 @@
+; SLIME 2015-08-24
+CL-USER> (fibonacci-TR 5)
+5
+CL-USER> (fibonacci-TR 6)
+8
+CL-USER> (fibonacci 5)
+; 
+
+; Warning: This function is undefined:
+;   FIBONACCI
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {5986F0FD}>.
+CL-USER> (fibonacci 5)
+
+5
+CL-USER> (fibonacci 6)
+8
+CL-USER> (my-replace 2 'a '(a b c 2))
+(A B C A)
+CL-USER> (my-replace 'a 'x '(2))
+(2)
+CL-USER> (my-replace 'a 'x 2)
+; Evaluation aborted on #<TYPE-ERROR {59BDF8CD}>.
+CL-USER> (my-replace 'a 'b '())
+NIL
+CL-USER> (sum 2 'a)
+NIL
+CL-USER> 

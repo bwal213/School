@@ -1,0 +1,12 @@
+Link to Github repository:
+https://github.com/bwal213/Cluster-Template-2
+
+Link to cloudlab experiment:
+https://www.cloudlab.us/status.php?uuid=5efa8ae4-fef4-11e8-b0b1-90e2ba22fee4
+
+Directory containing output:
+/scratch/
+
+The scratch folder contains sbatch.sh the file we are running, we have had success running as BW840606.
+The output files are named slurm-#.out.
+

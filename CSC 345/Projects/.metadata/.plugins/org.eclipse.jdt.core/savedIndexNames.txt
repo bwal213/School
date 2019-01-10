@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\Ben\OneDrive\School\2018 Fall\CSC 345\Projects\.metadata\.plugins\org.eclipse.jdt.core
+221595713.index
+724670569.index

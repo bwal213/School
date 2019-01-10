@@ -1,0 +1,44 @@
+     Assembly listing for: LAB_3.mas
+                Assembled: Tue Apr 03 09:28:28 EDT 2018
+
+         |                          /	Ben Walker
+         |                          /	CSC 242_02
+         |                          /	Week 10
+         |                          /	Lab 3	an assembly program that stops before 100 and reports the last two numbers
+000 1011 |  top    LOAD num1         
+001 3012 |         ADD num2          
+002 2013 |         STORE num3        
+003 1013 |         LOAD num3         
+004 4014 |         SUBT max          
+005 8010 |         SKIPCOND 010      
+006 900C |         JUMP out          
+007 1012 |         LOAD num2         
+008 2011 |         STORE num1        
+009 1013 |         LOAD num3         
+00A 2012 |         STORE num2        
+00B 9000 |         JUMP top          
+00C 1011 |  out    LOAD num1         
+00D 6000 |         OUTPUT            
+00E 1012 |         LOAD num2         
+00F 6000 |         OUTPUT            
+010 7000 |         HALT              
+011 0000 |  num1   DEC 0             
+012 0001 |  num2   DEC 1             
+013 0000 |  num3   DEC 0             
+014 0064 |  max    DEC 100           
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          max    |   014   | 004
+          num1   |   011   | 000, 008, 00C
+          num2   |   012   | 001, 007, 00A, 00E
+          num3   |   013   | 002, 003, 009
+          out    |   00C   | 006
+          top    |   000   | 00B
+         --------------------------------------------------
+
+

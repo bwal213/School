@@ -1,0 +1,20 @@
+This is a sentance.
+This is also a sentance.
+This file will contain twenty sentances.
+There was a requirement for twenty sentances.
+Without having twenty sentances there would not be enough of a test.
+This is a test for storing words.
+To only store one of each word and thier location.
+This way it should take less memory.
+There is no guarantee that it will take less memory.
+I hope to find a efficient solution. 
+To be efficient is not just about memory.
+It must also limit processor usage.
+If the processor does all the work then that is no good.
+If the memory does all the work then that is no good.
+To find a solution that uses both the least is good.
+The solution must be quick and efficient.
+If it is not quick that is no good.
+I wonder how I will solve this.
+I hope it does not take too long.
+I do not have much time.

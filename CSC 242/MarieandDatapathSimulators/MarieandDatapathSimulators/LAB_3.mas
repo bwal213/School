@@ -1,0 +1,25 @@
+/	Ben Walker
+/	CSC 242_02
+/	Week 10
+/	Lab 3	an assembly program that stops before 100 and reports the last two numbers
+top,	Load 	num1
+	Add	num2
+	Store	num3
+	Load	num3
+	Subt	max
+	Skipcond 10
+	Jump	out
+	Load 	num2	
+	Store 	num1
+	Load	num3
+	Store	num2
+	jump	top
+out,	Load	num1
+	Output
+	Load 	num2
+	Output
+	Halt
+num1,	DEC	0
+num2,	DEC	1
+num3,	DEC	0
+max,	DEC	100

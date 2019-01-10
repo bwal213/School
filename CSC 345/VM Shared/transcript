@@ -1,0 +1,8 @@
+wyatt@taz:~/Classes/CSC345/C++$ g++ example.cpp         // compile file --> a.out
+
+wyatt@taz:~/Classes/CSC345/C++$ a.out                   // execute  a.out
+
+25
+25
+
+wyatt@taz: 

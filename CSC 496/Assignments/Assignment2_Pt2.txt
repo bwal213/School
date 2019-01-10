@@ -1,0 +1,16 @@
+Assignment 2 Part 2
+
+My Github repository:
+https://github.com/bwal213/cloud-deployment-2
+
+My Experiment:
+https://www.cloudlab.us/status.php?uuid=efd8ddf6-b912-11e8-b228-90e2ba22fee4
+
+External IP:
+http://128.110.99.128/
+
+Collabortaion:
+I worked with Evan Stilwell on my origial understanding, and gained the rest from the docs. 
+
+Resources:
+https://docs.cloudlab.us/geni-lib.html

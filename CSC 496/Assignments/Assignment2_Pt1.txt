@@ -1,0 +1,24 @@
+Assignment 2 Part 1
+
+My Github repository:
+https://github.com/bwal213/my-profile
+
+My Experiment:
+https://www.cloudlab.us/status.php?uuid=296f5c01-b83d-11e8-b228-90e2ba22fee4
+
+External IP:
+http://128.110.99.134/
+
+Collabortaion:
+I worked with Evan Stilwell on my origial understanding, and gained some ideas from Cody. 
+I later helped multiple others with their part one, once I had mine operational.
+
+Resources:
+https://groups.google.com/forum/#!topic/cloudlab-users/NWVUPQG998I
+https://groups.google.com/forum/#!topic/cloudlab-users/0EY6WgX2H1A
+https://docs.cloudlab.us/geni-lib/
+https://docs.cloudlab.us/geni-lib/_modules/geni/rspec/pg.html#Node
+https://www.cloudlab.us/images.php
+http://docs.cloudlab.us
+https://media.readthedocs.org/pdf/geni-lib/latest/geni-lib.pdf
+https://www.liquidweb.com/kb/how-to-install-apache-on-centos-7/
