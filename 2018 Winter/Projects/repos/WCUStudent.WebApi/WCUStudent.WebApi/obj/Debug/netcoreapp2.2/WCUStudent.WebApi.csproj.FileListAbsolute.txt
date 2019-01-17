@@ -1,0 +1,14 @@
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\bin\Debug\netcoreapp2.2\WCUStudent.WebApi.deps.json
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\bin\Debug\netcoreapp2.2\WCUStudent.WebApi.runtimeconfig.json
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\bin\Debug\netcoreapp2.2\WCUStudent.WebApi.runtimeconfig.dev.json
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\bin\Debug\netcoreapp2.2\WCUStudent.WebApi.dll
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\bin\Debug\netcoreapp2.2\WCUStudent.WebApi.pdb
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.csprojAssemblyReference.cache
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.RazorAssemblyInfo.cache
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.RazorAssemblyInfo.cs
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.AssemblyInfoInputs.cache
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.AssemblyInfo.cs
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.dll
+C:\Users\Ben\OneDrive\School\2018 Winter\Projects\repos\WCUStudent.WebApi\WCUStudent.WebApi\obj\Debug\netcoreapp2.2\WCUStudent.WebApi.pdb
