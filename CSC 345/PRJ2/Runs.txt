@@ -1,0 +1,133 @@
+;;;=================================================================
+;;;Ben Walker
+;;;12-10-18
+;;;CSC345: ML Project
+;;;=================================================================
+
+%%% This file has been annotated. All annotations begin with %%%
+
+%%%=================================================================
+%%% This is the setup showing all functions interpreted.
+
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+- 
+[opening /home/bw840606/PRJ2/Project2.sml]
+datatype 'a BT = bTree of 'a * 'a BT * 'a BT | empty
+datatype X = A | B | C | D | E | F | G | H
+val t1 = bTree (1,bTree (2,bTree #,bTree #),bTree (5,bTree #,bTree #))
+  : int BT
+val t2 = bTree (A,bTree (B,bTree #,bTree #),bTree (C,bTree #,bTree #)) : X BT
+val t3 = bTree (1.22,bTree (2.33,empty,empty),bTree (3.44,empty,empty))
+  : real BT
+val t4 = bTree ("A",bTree ("B",bTree #,bTree #),bTree ("I",bTree #,empty))
+  : string BT
+val Postorder = fn : 'a BT -> 'a list
+val Preorder = fn : 'a BT -> 'a list
+val Inorder = fn : 'a BT -> 'a list
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val printReal = fn : real -> unit
+[autoloading]
+[autoloading done]
+val printInt = fn : int -> unit
+val printX = fn : X -> unit
+val indentlevel = 2 : int
+val tab = fn : int -> unit
+val displaynode = fn : 'a * int * ('a -> 'b) -> unit
+val dash = fn : int -> unit
+val displaytreeindent = fn : 'a BT * int * ('a -> 'b) -> unit
+val Displaytree = fn : 'a BT * ('a -> 'b) -> unit
+val it = () : unit
+
+%%%=================================================================
+%%% This is the tests for t1.
+
+- Preorder t1;
+val it = [1,2,3,4,5,6,7] : int list
+
+- Inorder t1;
+val it = [3,2,4,1,6,5,7] : int list
+
+- Postorder t1;
+val it = [3,4,2,6,7,5,1] : int list
+
+- Displaytree (t1, printInt);
+1
+  2
+    3
+    4
+  5
+    6
+    7
+val it = () : unit
+
+%%%=================================================================
+%%% This is the tests for t2.
+
+- Preorder t2;
+val it = [A,B,D,E,C,F,G] : X list
+
+- Inorder t2;
+val it = [D,B,E,A,F,C,G] : X list
+
+- Postorder t2;
+val it = [D,E,B,F,G,C,A] : X list
+
+- Displaytree (t2, printX);
+A
+  B
+    D
+    E
+  C
+    F
+    G
+val it = () : unit
+
+%%%=================================================================
+%%% This is the tests for t3.
+
+- Preorder t3;
+val it = [1.22,2.33,3.44] : real list
+
+- Inorder t3;
+val it = [2.33,1.22,3.44] : real list
+
+- Postorder t3;
+val it = [2.33,3.44,1.22] : real list
+
+- Displaytree (t3, printReal);
+1.22
+  2.33
+  3.44
+val it = () : unit
+
+%%%=================================================================
+%%%This is the tests for t4.
+
+- Preorder t4;
+val it = ["A","B","C","E","D","F","G","H","I","J","K","L","M"] : string list
+- Inorder t4;
+val it = ["E","C","B","F","D","H","G","A","J","L","K","M","I"] : string list
+- Postorder t4;
+val it = ["E","C","F","H","G","D","B","L","M","K","J","I","A"] : string list
+- Displaytree (t4, print);
+A
+  B
+    C
+      E
+      -
+    D
+      F
+      G
+        H
+        -
+  I
+    J
+      -
+      K
+        L
+        M
+    -
+val it = () : unit
+- 

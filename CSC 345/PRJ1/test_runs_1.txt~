@@ -1,0 +1,158 @@
+; SLIME 2015-08-24
+CL-USER> (lisp 'A)
+; 
+
+; Warning: This function is undefined:
+;   LISP
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {58DFDBAD}>.
+CL-USER> (listp 'a)
+
+NIL
+CL-USER> (listp '1)
+NIL
+CL-USER> (not (listp '1))
+T
+CL-USER> ((not (listp '1)) nil)
+
+; In: (NOT (LISTP '1)) NIL
+
+;   ((NOT #) NIL)
+; Error: Illegal function call.
+; ; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {591398D5}>.
+CL-USER> (* 1/2 (expt 5 2))
+
+25/2
+CL-USER> (/(* 1 (expt 5 2)) 2) 
+25/2
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate 1 x)
+; Evaluation aborted on #<UNBOUND-VARIABLE {592B5E5D}>.
+CL-USER> (integrate '1 'X)
+
+; In: LAMBDA (F LO HI)
+
+;   ((NUMBERP LO) (NUMBERP HI))
+; Error: Illegal function call.
+; 
+;   #'(LAMBDA (F LO HI) (BLOCK DEF-INTEGRAL #))
+; Note: Variable LO defined but never used.
+; 
+; Note: Variable HI defined but never used.
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {58B50D25}>.
+CL-USER> (integrate '1 'X)
+NIL
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'X)
+(* 1 X)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'X)
+(* 1 X)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'X)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<TYPE-ERROR {5954924D}>.
+CL-USER> (integrate '1 'X)
+X
+CL-USER> (integrate '1 'x)
+X
+CL-USER> (integrate '1 'y 1 4)
+Y
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'y 1 4)
+Y
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'y' 1 4)
+;   (NOT (AND # #) (AND # #))
+; Warning: Function called with two arguments, but wants exactly one.
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {58CF964D}>.
+CL-USER> (integrate '1 'y 1 4)
+Y
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'y 1 4)
+Y
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'y 1 4)
+Y
+CL-USER> (and(not(and (equal 1 nil)
+		      (equal 4 nil)))
+	     (and (numberp 1)
+		  (numberp 4)))
+T
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '1 'y 1 4)
+3
+CL-USER> (integrate '1 'x)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58457C3D}>.
+CL-USER> (integrate '1 'x)
+X
+CL-USER> (integrate '1 'x 1 4)
+3
+CL-USER> (integrate 'z 'z)
+(* 1/2 (EXPT Z 2))
+CL-USER> (integrate '(+ x x) 'x)
+NIL
+CL-USER> (integrate '(+ x 0) 'x)
+NIL
+CL-USER> (---1)
+; 
+
+; Warning: This function is undefined:
+;   |---1|
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {59356C3D}>.
+CL-USER> (first '(--- a))
+
+---
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '(+ x x) 'x)
+
+; In: LAMBDA (F)
+
+;   (NIL)
+; Warning: Function called with zero arguments, but wants exactly two.
+; 
+;   #'(LAMBDA (F) (BLOCK SUM-P #))
+; Note: Variable F defined but never used.
+; ; 
+
+; Warning: These variables are undefined:
+;   SUM-OPERAND-1 SUM-OPERAND-2 SUM-OPERATOR
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNBOUND-VARIABLE {58D66AC5}>.
+CL-USER> (integrate '(+ x x) 'x)
+
+; In: LAMBDA (F)
+
+;   (NIL)
+; Warning: Function called with zero arguments, but wants exactly one.
+; ; 
+
+; Warning: These variables are undefined:
+;   SUM-OPERAND-1 SUM-OPERAND-2
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNBOUND-VARIABLE {591821ED}>.
+CL-USER> (integrate '(+ x x) 'x)
+
+; In: LAMBDA (F)
+
+;   (NIL)
+; Warning: Function called with zero arguments, but wants exactly one.
+; 
+(+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(+ x v) 'x)
+(+ (* 1/2 (EXPT X 2)) (* V X))
+CL-USER> (integrate '(+ x 1) 'x)
+(+ (* 1/2 (EXPT X 2)) X)
+CL-USER> (integrate '(+ x 5) 'x)
+(+ (* 1/2 (EXPT X 2)) (* 5 X))
+CL-USER> 

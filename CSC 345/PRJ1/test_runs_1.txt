@@ -1,0 +1,439 @@
+; SLIME 2015-08-24
+CL-USER> (integrate '(- x v) 'x)
+; 
+
+; Warning: This function is undefined:
+;   INTEGRATE
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNDEFINED-FUNCTION {59A564ED}>.
+CL-USER> (integrate '(- x v) 'x)
+
+; In: LAMBDA (F)
+
+;   (NIL)
+; Warning: Function called with zero arguments, but wants exactly two.
+; 
+; Warning: Function called with zero arguments, but wants exactly one.
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {59C058C5}>.
+CL-USER> (integrate '(- x v) 'x)
+; Evaluation aborted on #<UNDEFINED-FUNCTION {59C53D95}>.
+CL-USER> (sum-p '(- x v))
+
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNDEFINED-FUNCTION {581E57B5}>.
+CL-USER> (integrate '(- x v) 'x)
+; Warning: Function called with zero arguments, but wants exactly one.
+; 
+(- (* 1/2 (EXPT X 2)) (* V X))
+CL-USER> (integrate '(- x v) 'x)
+(- (* 1/2 (EXPT X 2)) (* V X))
+CL-USER> (integrate '(- x 1) 'x)
+(- (* 1/2 (EXPT X 2)) X)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+;; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '(- x 1) 'x)
+; Warning: Function called with zero arguments, but wants exactly one.
+; 
+(- (* 1/2 (EXPT X 2)) X)
+CL-USER> (integrate '(- x 1) 'x)
+(- (* 1/2 (EXPT X 2)) X)
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNDEFINED-FUNCTION {58D868CD}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58FA031D}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59E33145}>.
+CL-USER> (negative-p '(x))
+NIL
+CL-USER> (negative-P '(- x))
+T
+CL-USER> (negative-P '(- - x))
+T
+CL-USER> (make-negative 'x)
+; Evaluation aborted on #<TYPE-ERROR {5840434D}>.
+CL-USER> (make-negative 'x)
+; Evaluation aborted on #<TYPE-ERROR {58B812AD}>.
+CL-USER> (make-negative '(x))
+(- (X))
+CL-USER> (make-negative '(x))
+(- X)
+CL-USER> (make-negative '(- x))
+(X)
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58D36F65}>.
+CL-USER> (make-negative '(- - x))
+(- X)
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58E0CFCD}>.
+CL-USER> (integrate '(x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58ED5D8D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58FBE60D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5919E4E5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on NIL.
+CL-USER> (make-negative '(- - x))
+(- X)
+CL-USER> (make-negative '(- - - x))
+(- - X)
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58E3D76D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58F6480D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5905056D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59E48BBD}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {581A7045}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5829BBCD}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; 
+
+; Warning: This function is undefined:
+;   LIST-P
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {58D4D70D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58E2F55D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58FB3BD5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5919E4FD}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59E443D5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5820C49D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5838D49D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+
+; In: LAMBDA (F)
+
+;   ((FIST F) NEGATIVE-SYMBOL)
+; Error: Illegal function call.
+; 
+;   (EQUAL (# NEGATIVE-SYMBOL) (EQUAL # #))
+; Note: The first argument never returns a value.
+; ;   ((FIST F) NEGATIVE-SYMBOL)
+; Error: Illegal function call.
+; 
+;   (EQUAL (# NEGATIVE-SYMBOL) (EQUAL # #))
+; Note: The first argument never returns a value.
+; ; 
+
+; Warning: This function is undefined:
+;   NEGATIVE-SYMBOL
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {5900811D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+
+; In: LAMBDA (F)
+
+;   ((FIST F) NEGATIVE-SYMBOL)
+; Error: Illegal function call.
+; 
+;   (EQUAL (# NEGATIVE-SYMBOL) (EQUAL # #))
+; Note: The first argument never returns a value.
+; ;   ((FIST F) NEGATIVE-SYMBOL)
+; Error: Illegal function call.
+; 
+;   (EQUAL (# NEGATIVE-SYMBOL) (EQUAL # #))
+; Note: The first argument never returns a value.
+; ; 
+
+; Warning: This function is undefined:
+;   NEGATIVE-SYMBOL
+; ; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {59E6B0ED}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<TYPE-ERROR {59F96FF5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; 
+
+; Warning: This function is undefined:
+;   F
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {582CBD9D}>.
+CL-USER> 
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; 
+
+; Warning: This function is undefined:
+;   F
+; ; Evaluation aborted on #<UNDEFINED-FUNCTION {58FE39C5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59144E6D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+
+3
+CL-USER> (integrate '(- - - x) 'x 1 4)
+3
+CL-USER> (integrate '(- - - x) 'x 1 4)
+3
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59F0B28D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {583B2325}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58506EF5}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5860377D}>.
+CL-USER> (make-negative '(- x))
+(X)
+CL-USER> (make-negative '(- x))
+(X)
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {587BDB2D}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+
+; In: LAMBDA (F V)
+
+;   (INDEF-INTEGRAL F)
+; Warning: Function called with one argument, but wants exactly two.
+; ; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {58A1F795}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on NIL.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58470165}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5862B095}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5873A8A5}>.
+CL-USER> (integrate '(+ x v) 'x)
+
+(+ (* 1/2 (EXPT X 2)) (* V X))
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58970FDD}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58A6F755}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58363EA5}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {584169FD}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {584CA0BD}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {585772FD}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5874F3D5}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5881398D}>.
+CL-USER> (make-negative 'x)
+; Evaluation aborted on NIL.
+CL-USER> (make-negative 'x)
+; Evaluation aborted on #<TYPE-ERROR {584CC1D5}>.
+CL-USER> (make-negative 'x)
+; Evaluation aborted on #<TYPE-ERROR {585797E5}>.
+CL-USER> (negative-operator 'x)
+; Evaluation aborted on #<TYPE-ERROR {58695DB5}>.
+CL-USER> (first 'x)
+; Evaluation aborted on #<TYPE-ERROR {58767CA5}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+
+; In: LAMBDA (F)
+
+;   (NOT (LISTP F) NIL)
+; Warning: Function called with two arguments, but wants exactly one.
+; ; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {589602C5}>.
+CL-USER> (make-negative 'x)
+; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {58A3044D}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58B36375}>.
+CL-USER> (make-negative 'x)
+
+(- . X)
+CL-USER> (make-negative 'x)
+(- X)
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {59284E55}>.
+CL-USER> (integrate '(- - - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {5937F8DD}>.
+CL-USER> (make-negative '(- x))
+(X)
+CL-USER> (make-negative 'x)
+(- X)
+CL-USER> (make-negative 'x)
+(- X)
+CL-USER> (make-negative '(- x))
+X
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58186B3D}>.
+CL-USER> (integrate '(- - x) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(- - - x) 'x)
+(- (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(- - - - x) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {584117E5}>.
+CL-USER> (integrate '1 'x 1 4)
+
+; In: DEF-INTEGRAL (INDEF-INTEGRAL F V)
+
+;   (DEF-INTEGRAL (INDEF-INTEGRAL F V) V LO HI)
+; Warning: Function called with four arguments, but wants exactly three.
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<KERNEL:SIMPLE-PROGRAM-ERROR {58A8FD35}>.
+CL-USER> (integrate '1 'x 1 4)
+; Warning: Function called with four arguments, but wants exactly three.
+; ; 
+
+; Warning: This function is undefined:
+;   MYREPLACE
+; 
+3
+CL-USER> (integrate '(- - x) 'x 1 4)
+; 
+
+; Warning: This function is undefined:
+;   MY-REPLACE
+; ; Evaluation aborted on #<TYPE-ERROR {59364EC5}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<TYPE-ERROR {5949DB45}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+; Evaluation aborted on #<SIMPLE-TYPE-ERROR {58395505}>.
+CL-USER> (integrate '(- - x) 'x 1 4)
+
+15/2
+CL-USER> (integrate '1 'x)
+X
+CL-USER> (integrate '1 'y 1 4)
+3
+CL-USER> (integrate 'z 'z)
+(* 1/2 (EXPT Z 2))
+CL-USER> (integrate '(+ x 0) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(- x) 'x 1 3)
+-4
+CL-USER> (integrate '(- - x) 'x 1 4)
+15/2
+CL-USER> (integrate '(- x) 'x)
+(- (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(- - x) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(- - - x) 'x)
+(- (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(+ x (- x)) 'x)
+(+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2))))
+CL-USER> (integrate '(- (+ (- - x) x)) 'x 1 4)
+; Evaluation aborted on #<UNDEFINED-FUNCTION {591FF855}>.
+CL-USER> (integrate '(- (+ (- - x) x)) 'x)
+(- (NIL))
+CL-USER> (integrate '(- (+ (x) x)) 'x)
+(- (NIL))
+CL-USER> (integrate '(x) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(+ (x) x) 'x)
+(+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(- (+ (x) x) 2) 'x)
+(- (+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2))) (* 2 X))
+CL-USER> (integrate '(- - x) 'x)
+(* 1/2 (EXPT X 2))
+CL-USER> (integrate '(- (+ (- - x) x)) 'x)
+(- (NIL))
+CL-USER> (integrate '(- (+ (x) x)) 'x)
+(- (NIL))
+CL-USER> (integrate '(+ (x) x) 'x)
+(+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2)))
+CL-USER> (integrate '(- (x)) 'x)
+(- (NIL))
+CL-USER> (integrate '(- x) 'x)
+(- (* 1/2 (EXPT X 2)))
+CL-USER> (rest '(- (x)))
+((X))
+CL-USER> (rest '((x)))
+NIL
+CL-USER> (null (rest '((x))))
+T
+CL-USER> (integrate '(- (+ (- - x) x)) 'x)
+(- (+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2))))
+CL-USER> (integrate '(- (+ (- - x) x)) 'x)
+(- (+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2))))
+CL-USER> (integrate '(- (+ (- - x) x)) 'x)
+(- (+ (* 1/2 (EXPT X 2)) (* 1/2 (EXPT X 2))))
+CL-USER> (integrate '(+ (+ (- - x) (+ x 3)) 2) 'x 2 6)
+52
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+
+; In: DEF-INTEGRAL (INDEF-INTEGRAL F V)
+
+;   (DEF-INTEGRAL (INDEF-INTEGRAL F V) V LO HI)
+; Warning: Function called with four arguments, but wants exactly three.
+; 
+
+; In: LAMBDA (F)
+
+;   #'(LAMBDA (F) (BLOCK POWER-P #))
+; Note: Variable F defined but never used.
+; ; 
+
+; Warning: These variables are undefined:
+;   POWER-OPERAND-1 POWER-OPERAND-2 POWER-OPERATOR
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<UNBOUND-VARIABLE {592D6E55}>.
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+
+; In: DEF-INTEGRAL (INDEF-INTEGRAL F V)
+
+;   (DEF-INTEGRAL (INDEF-INTEGRAL F V) V LO HI)
+; Warning: Function called with four arguments, but wants exactly three.
+; 
+; Loading #P"/home/bw840606/PRJ1/project1.lisp".
+; Evaluation aborted on #<TYPE-ERROR {5950AEB5}>.
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+; Warning: Function called with four arguments, but wants exactly three.
+; 
+(- (* 1/2 (EXPT X 2)) (NIL))
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (* 1/2 (EXPT X 2)) (NIL))
+CL-USER> (integrate '(expt x 3) 'x)
+(NIL)
+CL-USER> (power-p '(expt x 3))
+NIL
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (* 1/2 (EXPT X 2)) (/ (EXPT X 4) 4))
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (* 1/2 (EXPT X 2)) (/ (EXPT X 4) 4))
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (* 1/2 (EXPT X 2)) (/ (EXPT X 4) 4))
+CL-USER> (integrate '(- x (expt x 3)) 'x 2 5)
+-567/4
+CL-USER> (integrate '(+ (+ (- - - x)) (expt x 3)) 'x)
+(+ (NIL) (/ (EXPT X 4) 4))
+CL-USER> (integrate '(+ (+ (- - - x))) 'x)
+(NIL)
+CL-USER> (integrate '(+ x (+ x (- - - x)) (expt x 3)) 'x)
+(+ (* 1/2 (EXPT X 2)) (+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2)))))
+CL-USER> (integrate '(+ x (+ x (- - - x)) (expt x 3)) 'x)
+(+ (* 1/2 (EXPT X 2)) (+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2)))))
+CL-USER> (integrate '(+ x (+ x (- - - x)) (expt x 3)) 'x)
+(+ (* 1/2 (EXPT X 2)) (+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2)))))
+CL-USER> (integrate '(+ x (- x (- x)) (expt x 3)) 'x 2 3)
+15/2
+CL-USER> (integrate '(expt x -1) 'x)
+(LOG X)
+CL-USER> (integrate '(expt x -1) 'x 3 45)
+2.7080503
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x)
+(+ (+ (* 1/2 (EXPT X 2)) (- (* 5 X) (* 1/2 (EXPT X 2)))) (LOG X))
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x 5 217)
+1063.7704
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+85/4
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+85/4
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+85/4
+CL-USER> 

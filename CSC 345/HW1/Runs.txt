@@ -1,0 +1,54 @@
+;;;=================================================================
+;;;Ben Walker
+;;;10-3-18
+;;;CSC345: Homework 1
+;;;=================================================================
+
+%%% This file has been annotated. All annotations begin with %%%
+
+%%%-----------------------------------------------------------------
+%%% Test of Problem 1 - sum
+CL-USER> (sum 3 7)
+10
+CL-USER> (sum -4 10)
+6
+CL-USER> (sum 4 -10)
+-6
+CL-USER> (sum 3 'a)
+NIL
+CL-USER> (sum 'a 2)
+NIL
+
+%%%-----------------------------------------------------------------
+%%% Test of Problem 1 - my-replace
+
+CL-USER> (my-replace '(a) '(x) '(a (a) (b (a))))
+(A (X) (B (X)))
+CL-USER> (my-replace '(a) '(x) '(a (a b (a)) b a))
+(A (A B (X)) B A)
+CL-USER> (my-replace 'a '(x y (z)) '(a (a b (a)) b a))
+((X Y (Z)) ((X Y (Z)) B ((X Y (Z)))) B (X Y (Z)))
+CL-USER> (my-replace '(x y (z)) 'a '((x y (z)) ((x y (z)) b ((x y (z)))) b (x y (z))))
+(A (A B (A)) B A)
+CL-USER> (my-replace 2 'a '(a b c 2))
+(A B C A)
+CL-USER> (my-replace 'a 'x '(2))
+(2)
+CL-USER> (my-replace 'a 'b '())
+NIL
+
+%%%-----------------------------------------------------------------
+%%% Test of Problem 2 - fibonacci
+
+CL-USER> (fibonacci 5)
+5
+CL-USER> (fibonacci 6)
+8
+
+%%%-----------------------------------------------------------------
+%%% Test of Problem 2 - fibonacci-TR
+
+CL-USER> (fibonacci-TR 5)
+5
+CL-USER> (fibonacci-TR 6)
+8

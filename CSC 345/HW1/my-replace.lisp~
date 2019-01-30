@@ -1,0 +1,8 @@
+(defun my-replace (e1 e2 L)
+  "Will replace the first element \"e1\" with the second element \"e2\" in the list \"L\"."		       
+  (cond ((endp L) nil)
+	((equal (first L) e1) (append (list e2) (my-replace e1 e2 (rest L))))
+	((listp (first L)) (append (list(my-replace e1 e2 (first L)))
+				   (my-replace e1 e2 (rest L))))
+	(t(append (list(first L)) (my-replace e1 e2 (rest L))))
+	))

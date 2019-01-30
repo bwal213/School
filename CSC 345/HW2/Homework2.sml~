@@ -1,0 +1,26 @@
+fun reverseBy2 (x::y::xys) = [y] @ [x] @ reverseBy2 (xys)
+  | reverseBy2 (x::xs) = [x] @ reverseBy2 (xs)
+  | reverseBy2 (nil) = nil;
+
+fun vowel (v) = if (v = #"a") orelse (v = #"A") orelse
+		   (v = #"e") orelse (v = #"E") orelse
+		   (v = #"i") orelse (v = #"I") orelse
+		   (v = #"o") orelse (v = #"O") orelse
+		   (v = #"u") orelse (v = #"U") then true
+		else false;
+    
+fun pigSub (nil, bool) = nil
+  | pigSub (x::xs, true) = if (vowel x)
+				   then ([x] @ (xs) @ [#"y", #"a", #"y"])
+				   else pigSub ((xs) @ [x], false)
+  | pigSub (x::xs, false) = if (vowel x)
+				    then ([x] @ (xs) @ [#"a", #"y"])
+				    else pigSub ((xs) @ [x], false)
+
+fun piglatinize (str) = implode(pigSub (explode (str), true));
+
+fun deleteIth (x::xs, i: int) = if (i > 1)    
+				then [x] @ deleteIth (xs,i-1)
+				else
+				    (xs)
+  | deleteIth (nil, i: int) = nil;

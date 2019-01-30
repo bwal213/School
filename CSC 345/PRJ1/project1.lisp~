@@ -1,0 +1,208 @@
+(defun integrate (F V &optional lo hi)
+  (def-integral (indef-integral F V) lo hi))
+
+;  (cond ((endp L) nil)
+;	(() (analyze (first L))(integrate (rest L)))
+;	((listp (first L) (integrate (first L))(integrate (rest L))))  
+;	))
+
+(defun indef-integral (F V)
+  ;;;(/(* # (expt X #)) #)
+  (cond ((number-p F)(make-product F V))
+	((and(variable-p F)(equal F V))(make-product 1/2 (make-power F 2)))
+	((and(variable-p F)(not(equal F V)))(make-product F V))
+	((sum-p F)(make-sum (indef-integral (sum-operand-1 F) V)
+			    (indef-integral (sum-operand-2 F) V)))
+	((difference-p F)(make-difference
+			  (indef-integral (difference-operand-1 F) V)
+			  (indef-integral (difference-operand-2 F) V)))
+	)
+  
+  )
+
+(defun def-integral (F lo hi)
+  (cond ((and(and (equal lo nil)
+		  (equal hi nil))
+	     (not(and (numberp lo)
+		      (numberp hi))))
+	 F)
+  ;;; (-(expt hi F) (expt lo F))
+	((variable-p F) (-(expt hi 1) (expt lo 1)))
+
+	(t(-(expt hi F) (expt lo F)))
+     )
+  )
+	 
+
+;;;============================================================================
+;;; SYMBOLS
+(defconstant variable-symbols '(U V W X Y Z))
+(defconstant negative-symbol '-)
+(defconstant sum-symbol '+)
+(defconstant difference-symbol '-)
+(defconstant product-symbol '*)
+(defconstant quotient-symbol '/)
+(defconstant power-symbol 'expt)
+(defconstant log-symbol 'log)
+
+;;;============================================================================
+;;; SELECTORS -- OPERATORS
+(defun negative-operator (F) (first F))
+(defun sum-operator (F) (first F))
+(defun difference-operator (F) (first F))
+(defun product-operator (F) (first F))
+(defun quotient-operator (F) (first F))
+(defun power-operator (F) (first F))
+(defun log-operator (F) (first F))
+
+;;; SELECTORS -- OPERANDS
+(defun negative-operand (F) (second F))
+(defun sum-operand-1 (F) (second F))
+(defun sum-operand-2 (F) (third F))
+(defun difference-operand-1 (F) (second F))
+(defun difference-operand-2 (F) (third F))
+(defun product-operand-1 (F) (second F))
+(defun product-operand-2 (F) (third F))
+(defun quotient-operand-1 (F) (second F))
+(defun quotient-operand-2 (F) (third F))
+(defun power-operand-1 (F) (second F))
+(defun power-operand-2 (F) (third F))
+(defun log-operand-1 (F) (second F))
+(defun log-operand-2 (F) (third F))
+
+;;;============================================================================
+;;; PREDICATES
+
+(defun number-p (F)
+  (numberp F)
+  )
+
+(defun variable-p (F)
+  "This is the variable predicate for integrate"
+  (member F  variable-symbols))
+
+(defun negative-p (F)
+  "This is the negative predicate for integrate"
+  (cond ((and (equal difference-operator difference-symbol)
+	      (numberp difference-operand-1)
+	      (numberp difference-operand-2)
+	      ) nil)
+	(t(t)))
+  )
+
+(defun sum-p (F)
+  "This is the sum predicate for integrate"
+  (cond ((and (equal (sum-operator F) sum-symbol)
+	      (not(equal nil (sum-operand-2 F)))
+	      ) t)
+	(t(nil)))
+  )
+
+(defun difference-p (F)
+  "This is the difference predicate for integrate"
+  (cond ((and (equal (difference-operator F) difference-symbol)
+	      (not(equal (negative-operator F) (difference-operand-1 F)))
+	      (not(equal nil (difference-operand-2 F)))
+	      ) t)
+	(t(nil)))
+  )
+
+(defun product-p (F)
+  "This is the product predicate for integrate"
+  (cond ((and (equal product-operator product-symbol)
+	      (numberp product-operand-1)
+	      (numberp product-operand-2)
+	      ) t)
+	(t(nil)))
+  )
+
+(defun quotient-p (F)
+  "This is the quotient predicate for integrate"
+  (cond ((and (equal quotient-operator quotient-symbol)
+	      (numberp quotient-operand-1)
+	      (numberp quotient-operand-2)
+	      ) t)
+	(t(nil)))
+  )
+
+(defun power-p (F)
+  "This is the power predicate for integrate"
+  (cond ((and (equal power-operator power-symbol)
+	      (numberp power-operand-1)
+	      (numberp power-operand-2)
+	      ) t)
+	(t(nil)))
+  )
+
+(defun log-p (F)
+  )
+
+;;;============================================================================
+;;; CONSTRUCTORS
+
+(defun make-variable (V) V)
+
+
+
+
+(defun make-sum (F G)
+  (cond ((eq 0 F) G)
+	((eq 0 G) F)
+
+	((and(numberp F)(numberp G))(+ F G))
+	(t(list sum-symbol F G))))
+
+(defun make-negative (F)
+  (cond ((and negative-p (> 0 (eval(F))))  (list negative-symbol F))
+	(t(rest F)))
+  )
+
+(defun make-difference (F G)
+  (list difference-symbol F G)
+  )
+
+(defun make-product (F G)
+  (cond ((equal 1 F) G)
+	((equal 0 F) 0)
+	((equal 1 G) F)
+	((equal 0 G) 0)
+	(t(list product-symbol F G))
+	)
+  )
+
+(defun make-quotient (F G)
+  (list quotient-symbol F G)
+  )
+
+(defun make-power (F G)
+  (list power-symbol F G)
+  )
+
+(defun make-log (F G)
+  (list log-symbol F G)
+  )
+
+;;;============================================================================
+;;; HELPERS
+
+(defun analyze (L)
+
+  (cond ((log-p L) )
+	((power-p L))
+	((quotient-p L))
+	((product-p L))
+	((difference-p L))
+	((sum-p L))
+	((negative-p L))
+	((variable-p L))
+	))
+
+(defun solve (L)
+  )
+
+(defun mathify (L)
+  )
+
+(defun cleanup (L)
+  )
+

@@ -1,0 +1,123 @@
+;;;=================================================================
+;;;Ben Walker
+;;;10-30-18
+;;;CSC345: Project 1
+;;;=================================================================
+
+%%% This file has been annotated. All annotations begin with %%%
+
+%%% Test 1
+
+CL-USER> (integrate '1 'x)
+X
+
+%%% Test 2
+
+CL-USER> (integrate '1 'y 1 4)
+3
+
+%%% Test 3
+
+CL-USER> (integrate 'z 'z)
+(* 1/2 (EXPT Z 2))
+
+%%% Test 4
+
+CL-USER> (integrate '(+ x 0) 'x)
+(* 1/2 (EXPT X 2))
+
+%%% Test 5
+
+CL-USER> (integrate '(- x) 'x 1 3)
+-4
+
+%%% Test 6
+
+CL-USER> (integrate '(- - x) 'x 1 4)
+15/2
+
+%%% Test 7
+
+CL-USER> (integrate '(- x) 'x)
+(- (* 1/2 (EXPT X 2)))
+
+%%% Test 8
+
+CL-USER> (integrate '(- - x) 'x)
+(* 1/2 (EXPT X 2))
+
+%%% Test 9
+
+CL-USER> (integrate '(- - - x) 'x)
+(- (* 1/2 (EXPT X 2)))
+
+%%% Test 10
+
+CL-USER> (integrate '(+ x (- x)) 'x)
+(+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2))))
+
+%%% Test 11
+
+CL-USER> (integrate '(- (+ (- - x) x)) 'x 1 4)
+-15
+
+%%% Test 12
+
+CL-USER> (integrate '(+ (+ (- - x) (+ x 3)) 2) 'x 2 6)
+52
+
+%%% Test 13
+
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (* 1/2 (EXPT X 2)) (/ (EXPT X 4) 4))
+
+%%% Test 14
+
+CL-USER> (integrate '(- x (expt x 3)) 'x 2 5)
+-567/4
+
+%%% Test 15
+
+CL-USER> (integrate '(+ x (+ x (- - - x)) (expt x 3)) 'x)
+(+ (* 1/2 (EXPT X 2)) (+ (* 1/2 (EXPT X 2)) (- (* 1/2 (EXPT X 2)))))
+
+%%% Test 16
+
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+85/4
+
+%%% Test 17
+
+CL-USER> (integrate '(expt x -1) 'x)
+(LOG X)
+
+%%% Test 18
+
+CL-USER> (integrate '(expt x -1) 'x 3 45)
+2.7080503
+
+%%% Test 19
+
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x)
+(+ (+ (* 1/2 (EXPT X 2)) (- (* 5 X) (* 1/2 (EXPT X 2)))) (LOG X))
+
+%%% Test 20
+
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x 5 217)
+1063.7704
+
+
+%%% These are extreneous tests
+
+%%% Test for subtraction features
+
+CL-USER> (integrate '(- x v) 'x)
+(- (* 1/2 (EXPT X 2)) (* V X))
+
+CL-USER> (integrate '(- x 1) 'x)
+(- (* 1/2 (EXPT X 2)) X)
+
+%%% Test for addition features
+
+CL-USER> (integrate '(+ x v) 'x)
+(+ (* 1/2 (EXPT X 2)) (* V X))

@@ -1,0 +1,114 @@
+;;;=================================================================
+;;;Ben Walker
+;;;11-14-18
+;;;CSC345: ML Homework
+;;;=================================================================
+
+%%% This file has been annotated. Annotations begin with %%%
+
+
+
+%%% initialization showing all functions interpret correctly
+
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+- 
+[opening /home/bw840606/HW2/Homework2.sml]
+val reverseBy2 = fn : 'a list -> 'a list
+val vowel = fn : char -> bool
+val pigSub = fn : char list * bool -> char list
+val piglatinize = fn : string -> string
+val deleteIth = fn : 'a list * int -> 'a list
+val it = () : unit
+
+
+
+%%% flip with string
+
+- flip (["a", "b", "c", "d"]);
+val it = ["b","a","d","c"] : string list
+
+- flip (["a", "b", "c", "d","e"]);
+val it = ["b","a","d","c","e"] : string list
+
+
+
+%%% flip with char list
+
+- flip ([#"a", #"b", #"c", #"d",#"e"]);
+val it = [#"b",#"a",#"d",#"c",#"e"] : char list
+
+- flip ([#"a", #"b", #"c", #"d"]);
+val it = [#"b",#"a",#"d",#"c"] : char list
+
+
+
+%%% flip with int
+
+- flip ([1,2,3,4,5]);
+val it = [2,1,4,3,5] : int list
+
+- flip ([1,2,3,4]);
+val it = [2,1,4,3] : int list
+
+
+
+%%% deleteIth with string
+
+- deleteIth (["a", "b", "c", "d"], 2);
+val it = ["a","c","d"] : string list
+
+- deleteIth (["a", "b", "c", "d"], 6);
+val it = ["a","b","c","d"] : string list
+
+
+
+
+%%% deleteIth with char list
+
+- deleteIth ([#"a", #"b", #"c", #"d"], 2);
+val it = [#"a",#"c",#"d"] : char list
+
+- deleteIth ([#"a", #"b", #"c", #"d"], 6);
+val it = [#"a",#"b",#"c",#"d"] : char list
+
+
+
+%%% deleteIth with int
+
+- deleteIth ([1,2,3,4,5], 2);
+val it = [1,3,4,5] : int list
+
+- deleteIth ([1,2,3,4,5], 6);
+val it = [1,2,3,4,5] : int list
+
+
+
+%%% piglatinize with words that start in a non vowel
+
+- piglatinize ("squirrel");
+val it = "uirrelsqay" : string
+
+- piglatinize ("cat");
+val it = "atcay" : string
+
+- piglatinize ("computer");
+val it = "omputercay" : string
+
+- piglatinize ("kyrgyzstan");
+val it = "ankyrgyzstay" : string
+
+
+
+%%% piglatinize with words that start in a vowel
+
+- piglatinize ("elevator");
+val it = "elevatoryay" : string
+
+- piglatinize ("uzbekistan");
+val it = "uzbekistanyay" : string
+
+- piglatinize ("alphabet");
+val it = "alphabetyay" : string
+
+- piglatinize ("open");
+val it = "openyay" : string

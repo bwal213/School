@@ -1,0 +1,31 @@
+;;;=================================================================
+;;;Ben Walker
+;;;10-30-18
+;;;CSC345: Project 1
+;;;=================================================================
+
+The integration function has the following known bugs:
+
+1-Not configured for multiplication functions as input.
+
+2-Not configured for quotient functions as input.
+
+3-Not configured for log functions as input.
+
+4-Erroneous user input is not checked or handled.
+	ex.  '(--- 1) will cause an issue.
+
+5-Not following proper lisp formatting will cause an issue.
+
+6-Not inputting values correctly will cause an issue.
+
+7-Not configured for nil as input.
+
+8-Not configured to recognize exterior variables.
+
+9-Not configured for individual functions to be run individually.
+
+10-All functions available to be seen by users.
+
+11-Numeric or incorrect variable input for the in_regards_to input
+   is not handled.

@@ -1,0 +1,18 @@
+(defun sum (N M)
+  "My recursive implementation of sum"
+  (labels
+    ((sum-add (n m)
+       (cond
+	 ((equal m 0) n)
+	 (t (sum-add (1+ n) (1- m)))
+	 )))
+    ((sum-sub (n m)
+       (cond
+	 ((equal m 0) n)
+	 (t (sum-sub (1- n) (1+ m)))
+	 )))
+    )
+  (cond ((or (not (integerp N)) (not (integerp M))) nil)
+	((> M 0) (sum-add (N M)))
+	((< M 0) (sum-sub (N M)))
+	(t nil)))
